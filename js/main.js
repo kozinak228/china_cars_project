@@ -168,29 +168,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Contact Form Handling
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Get form data
-            const formData = new FormData(contactForm);
-            const name = formData.get('name'); // Assuming we add name attributes
-
-            // Simulation of submission
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerText;
-
-            submitBtn.disabled = true;
-            submitBtn.innerText = 'Отправка...';
-
-            setTimeout(() => {
-                alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
-                contactForm.reset();
-                submitBtn.disabled = false;
-                submitBtn.innerText = originalText;
-            }, 1000);
-        });
-    }
 });
